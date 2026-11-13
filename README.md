@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BYX — Moda Fitness & Casual
 
-## Getting Started
+Landing page premium + catálogo local da BYX (*Be Your X*). Vitrine com vendas direcionadas ao WhatsApp.
 
-First, run the development server:
+- Next.js (App Router) · TypeScript · Tailwind CSS · Motion · Lucide
+- Sem banco de dados, sem painel, sem checkout: produtos em `src/data/products.ts`
+- Deploy na Vercel a cada `git push`
+
+## Rodar localmente
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Comando | O que faz |
+| --- | --- |
+| `npm run dev` | Servidor de desenvolvimento |
+| `npm run build` | Build de produção (valida o catálogo antes) |
+| `npm run start` | Serve o build |
+| `npm run validate:catalog` | Confere slugs, preços, imagens e dados dos produtos |
+| `npm run typecheck` | TypeScript |
+| `npm run lint` | ESLint |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Estrutura
 
-## Learn More
+```
+src/
+  app/            páginas (/, /produto/[slug]), sitemap, robots, 404
+  components/     layout/ sections/ products/ ui/
+  data/           products.ts · categories.ts · site-content.ts · store-config.ts
+  lib/            catalog.ts · whatsapp.ts · format.ts · analytics.ts · validate.ts
+  types/          product.ts
+public/images/    brand/ hero/ collections/ about/ products/ lifestyle/
+scripts/          validate-catalog.mts
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Manutenção
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Como cadastrar/editar produtos, trocar imagens e publicar: [CATALOG_GUIDE.md](CATALOG_GUIDE.md)
+- Regras permanentes para o Claude Code: [CLAUDE.md](CLAUDE.md)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Publicação
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+O catálogo é versionado no repositório. Alterar arquivos localmente **não** muda o site em produção:
+faça commit e push para o repositório conectado à Vercel, que gera o novo deploy.
