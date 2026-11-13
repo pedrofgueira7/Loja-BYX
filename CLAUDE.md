@@ -81,5 +81,5 @@ O fluxo é: editar → `git commit` → `git push` para o repositório conectado
 
 ## Imagens demonstrativas
 
-Hero, coleções, sobre e lifestyle usam imagens identificadas como "IMAGEM DEMONSTRATIVA".
+Hero, sobre e lifestyle usam imagens identificadas como "IMAGEM DEMONSTRATIVA". As fotos de coleções (`collections/fitness.jpg` e `casual.jpg`) já são reais.
 Substitua os arquivos mantendo os mesmos nomes (veja `CATALOG_GUIDE.md`).

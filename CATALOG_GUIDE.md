@@ -115,7 +115,7 @@ WhatsApp, Instagram e SEO ficam em `src/data/store-config.ts`.
 
 ## Imagens de campanha
 
-Os arquivos abaixo são **imagens demonstrativas** (identificadas na própria imagem). Para trocar, substitua o arquivo mantendo o nome:
+Hero, sobre, lifestyle e a imagem de compartilhamento ainda são **imagens demonstrativas** (identificadas na própria imagem); as fotos de coleções já são reais. Para trocar qualquer uma, substitua o arquivo mantendo o nome:
 
 | Arquivo | Uso | Tamanho sugerido |
 | --- | --- | --- |
