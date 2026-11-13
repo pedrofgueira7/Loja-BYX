@@ -30,7 +30,7 @@ Se `availability` não foi informado, use `"inquiry"` (consulte disponibilidade)
 | Textos institucionais e imagens de campanha | `src/data/site-content.ts` |
 | WhatsApp, Instagram, SEO base, IDs de analytics | `src/data/store-config.ts` |
 | Fotos de produto | `public/images/products/<slug>/01.jpg, 02.jpg…` |
-| Fotos de campanha | `public/images/hero|collections|about|lifestyle/` |
+| Fotos de campanha | `public/images/hero|collections|lifestyle/` e `public/videos/` |
 
 Atualizações de produto tocam **apenas** `products.ts` e `public/images/products/`.
 
@@ -81,5 +81,5 @@ O fluxo é: editar → `git commit` → `git push` para o repositório conectado
 
 ## Imagens demonstrativas
 
-Hero, sobre e lifestyle usam imagens identificadas como "IMAGEM DEMONSTRATIVA". As fotos de coleções (`collections/fitness.jpg` e `casual.jpg`) já são reais.
+Hero e lifestyle usam imagens identificadas como "IMAGEM DEMONSTRATIVA". As fotos de coleções (`collections/fitness.jpg` e `casual.jpg`) e o vídeo da seção Sobre (`public/videos/sobre.mp4`) já são reais.
 Substitua os arquivos mantendo os mesmos nomes (veja `CATALOG_GUIDE.md`).

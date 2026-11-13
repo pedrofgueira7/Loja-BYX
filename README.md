@@ -33,7 +33,8 @@ src/
   data/           products.ts · categories.ts · site-content.ts · store-config.ts
   lib/            catalog.ts · whatsapp.ts · format.ts · analytics.ts · validate.ts
   types/          product.ts
-public/images/    brand/ hero/ collections/ about/ products/ lifestyle/
+public/images/    brand/ hero/ collections/ products/ lifestyle/
+public/videos/    sobre.mp4 (vídeo da seção Sobre)
 scripts/          validate-catalog.mts
 ```
 

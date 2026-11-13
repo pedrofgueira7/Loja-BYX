@@ -115,7 +115,7 @@ WhatsApp, Instagram e SEO ficam em `src/data/store-config.ts`.
 
 ## Imagens de campanha
 
-Hero, sobre, lifestyle e a imagem de compartilhamento ainda são **imagens demonstrativas** (identificadas na própria imagem); as fotos de coleções já são reais. Para trocar qualquer uma, substitua o arquivo mantendo o nome:
+Hero, lifestyle e a imagem de compartilhamento ainda são **imagens demonstrativas** (identificadas na própria imagem); as fotos de coleções já são reais. Para trocar qualquer uma, substitua o arquivo mantendo o nome:
 
 | Arquivo | Uso | Tamanho sugerido |
 | --- | --- | --- |
@@ -123,7 +123,7 @@ Hero, sobre, lifestyle e a imagem de compartilhamento ainda são **imagens demon
 | `public/images/hero/hero-mobile.jpg` | Hero (celular) | 1080×1620 |
 | `public/images/collections/fitness.jpg` | Card BYX Fitness | 1200×1500 |
 | `public/images/collections/casual.jpg` | Card BYX Casual | 1200×1500 |
-| `public/images/about/about.jpg` | Seção Sobre | 1200×1500 |
+| `public/videos/sobre.mp4` | Vídeo em loop da seção Sobre (mudo, proporção 4:5 ou 3:4; mantenha leve, de preferência abaixo de 5 MB) | 720×960 |
 | `public/images/lifestyle/01.jpg … 05.jpg` | Galeria Lifestyle | ver `site-content.ts` (`ratio`) |
 | `public/images/brand/og-default.jpg` | Prévia ao compartilhar o link | 1200×630 |
 | `public/images/brand/placeholder-produto.jpg` | Produto sem foto | 1200×1500 |

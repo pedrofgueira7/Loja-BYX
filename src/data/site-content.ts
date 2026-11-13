@@ -48,8 +48,9 @@ export const catalog = {
 export const about = {
   title: "BE YOUR OWN VERSION.",
   text: "Acreditamos que o estilo é uma forma de expressão. Cada escolha revela uma versão única de quem somos. A BYX nasce para acompanhar seus movimentos, seus momentos e sua maneira de estar no mundo.",
-  image: "/images/about/about.jpg",
-  imageAlt: "BYX — a essência da marca",
+  /** Vídeo em loop (mudo). Para trocar, substitua public/videos/sobre.mp4. */
+  video: "/videos/sobre.mp4",
+  videoAlt: "Vídeo da BYX — a essência da marca",
 } as const;
 
 export const lifestyle = {
