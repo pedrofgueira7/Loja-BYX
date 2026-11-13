@@ -36,7 +36,10 @@ export function Hero() {
         <Reveal immediate delay={0.1}>
           <h1
             id="hero-title"
-            className="font-display text-[clamp(3.6rem,15.5vw,13rem)] leading-[0.82] font-extrabold tracking-[-0.05em] uppercase"
+            // -ml-[0.06em]: compensa o espaço lateral interno (side bearing ≈ 0,0625em) do "B" em
+            // corpo gigante, para o traço da letra alinhar com o início dos textos abaixo.
+            // É proporcional ao corpo da fonte, então vale para qualquer largura de tela.
+            className="-ml-[0.06em] font-display text-[clamp(3.6rem,15.5vw,13rem)] leading-[0.82] font-extrabold tracking-[-0.05em] uppercase"
           >
             {hero.title}
           </h1>

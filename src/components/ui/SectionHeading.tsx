@@ -9,6 +9,8 @@ type Props = {
   align?: "left" | "center";
   as?: "h1" | "h2";
   id?: string;
+  /** "relaxed" dá folga entre linhas para acentos (Ã, Ç…) não encostarem na linha de cima. */
+  leading?: "tight" | "relaxed";
 };
 
 export function SectionHeading({
@@ -19,6 +21,7 @@ export function SectionHeading({
   align = "left",
   as: Tag = "h2",
   id,
+  leading = "tight",
 }: Props) {
   const dark = tone === "dark";
   return (
@@ -37,7 +40,9 @@ export function SectionHeading({
       <Reveal delay={0.05}>
         <Tag
           id={id}
-          className="font-display text-[clamp(2.25rem,7vw,5rem)] leading-[0.95] font-extrabold tracking-[-0.035em] uppercase"
+          className={`font-display text-[clamp(2.25rem,7vw,5rem)] ${
+            leading === "relaxed" ? "leading-[1.1]" : "leading-[0.95]"
+          } font-extrabold tracking-[-0.035em] uppercase`}
         >
           {title}
         </Tag>

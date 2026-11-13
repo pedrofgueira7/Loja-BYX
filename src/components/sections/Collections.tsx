@@ -10,7 +10,12 @@ export function Collections() {
   return (
     <section id="colecoes" aria-labelledby="colecoes-title" className="bg-byx-white py-20 lg:py-32">
       <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-12">
-        <SectionHeading id="colecoes-title" title={collections.title} description={collections.description} />
+        <SectionHeading
+          id="colecoes-title"
+          title={collections.title}
+          description={collections.description}
+          leading="relaxed"
+        />
 
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:mt-16 lg:gap-6">
           {categories.map((c, i) => (
