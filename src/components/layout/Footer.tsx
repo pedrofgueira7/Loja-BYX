@@ -1,6 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { navItems } from "@/data/site-content";
+import { SectionLink } from "@/components/ui/SectionLink";
+import { sectionIdFromHref } from "@/lib/scroll";
 import { storeConfig } from "@/data/store-config";
 import { createWhatsAppLink, generalMessage } from "@/lib/whatsapp";
 import { CurrentYear } from "@/components/ui/CurrentYear";
@@ -35,12 +36,13 @@ export function Footer() {
           <ul className="space-y-1">
             {navItems.map((item) => (
               <li key={item.label}>
-                <Link
-                  href={item.href}
+                <SectionLink
+                  id={sectionIdFromHref(item.href)}
+                  category={"category" in item ? item.category : undefined}
                   className="inline-flex min-h-10 items-center text-sm font-semibold tracking-[0.18em] uppercase hover:underline hover:underline-offset-8"
                 >
                   {item.label}
-                </Link>
+                </SectionLink>
               </li>
             ))}
           </ul>

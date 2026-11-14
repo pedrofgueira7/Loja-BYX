@@ -1,34 +1,30 @@
 "use client";
 
-import Link from "next/link";
 import type { ComponentProps } from "react";
 import type { CategoryId } from "@/data/categories";
 import { track } from "@/lib/analytics";
+import { CATEGORY_EVENT, SectionLink } from "./SectionLink";
 
-export const CATEGORY_EVENT = "byx:category";
+export { CATEGORY_EVENT };
 
-type Props = Omit<ComponentProps<typeof Link>, "href"> & {
+type Props = Omit<ComponentProps<typeof SectionLink>, "id" | "category"> & {
   /** Categoria a ser pré-selecionada no catálogo. */
   category: CategoryId | "all";
 };
 
-/**
- * Leva ao catálogo já filtrado. O hash (#fitness / #casual) funciona entre páginas;
- * o evento customizado atualiza o filtro quando já estamos na home.
- */
+/** Leva ao catálogo já filtrado (sem "#" na URL). */
 export function CatalogLink({ category, onClick, children, ...props }: Props) {
-  const hash = category === "all" ? "catalogo" : category;
   return (
-    <Link
-      href={`/#${hash}`}
+    <SectionLink
+      id={category === "all" ? "catalogo" : category}
+      category={category}
       onClick={(e) => {
-        window.dispatchEvent(new CustomEvent(CATEGORY_EVENT, { detail: category }));
         if (category !== "all") track("view_collection", { collection: category });
         onClick?.(e);
       }}
       {...props}
     >
       {children}
-    </Link>
+    </SectionLink>
   );
 }

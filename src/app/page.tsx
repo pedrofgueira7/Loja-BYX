@@ -7,6 +7,7 @@ import { About } from "@/components/sections/About";
 import { Lifestyle } from "@/components/sections/Lifestyle";
 import { Instagram } from "@/components/sections/Instagram";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { ScrollIntent } from "@/components/ui/ScrollIntent";
 import { getPublishedProducts } from "@/lib/catalog";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <Lifestyle />
       <Instagram />
       <FinalCTA />
+      <ScrollIntent />
     </>
   );
 }

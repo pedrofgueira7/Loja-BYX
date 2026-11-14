@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { buttonClasses } from "@/components/ui/Button";
+import { SectionLink } from "@/components/ui/SectionLink";
 
 export const metadata: Metadata = {
   title: "Página não encontrada",
@@ -17,9 +17,9 @@ export default function NotFound() {
         não existe.
       </h1>
       <p className="mt-6 max-w-md text-byx-mid">A página que você procura não está disponível ou a peça saiu do site.</p>
-      <Link href="/#catalogo" className={`mt-10 ${buttonClasses("solid-inverse")}`}>
+      <SectionLink id="catalogo" category="all" className={`mt-10 ${buttonClasses("solid-inverse")}`}>
         VER PEÇAS DISPONÍVEIS
-      </Link>
+      </SectionLink>
     </section>
   );
 }

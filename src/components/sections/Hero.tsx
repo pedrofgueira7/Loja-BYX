@@ -1,6 +1,8 @@
 import { getImageProps } from "next/image";
 import { hero } from "@/data/site-content";
-import { ButtonLink } from "@/components/ui/Button";
+import { buttonClasses } from "@/components/ui/Button";
+import { SectionLink } from "@/components/ui/SectionLink";
+import { sectionIdFromHref } from "@/lib/scroll";
 import { Reveal } from "@/components/ui/Reveal";
 
 /**
@@ -56,12 +58,12 @@ export function Hero() {
             </Reveal>
           </div>
           <Reveal immediate delay={0.55} className="flex flex-col gap-3 sm:flex-row lg:col-span-6 lg:justify-end">
-            <ButtonLink href={hero.primaryCta.href} variant="solid-inverse">
+            <SectionLink id={sectionIdFromHref(hero.primaryCta.href)} className={buttonClasses("solid-inverse")}>
               {hero.primaryCta.label}
-            </ButtonLink>
-            <ButtonLink href={hero.secondaryCta.href} variant="outline-inverse">
+            </SectionLink>
+            <SectionLink id={sectionIdFromHref(hero.secondaryCta.href)} className={buttonClasses("outline-inverse")}>
               {hero.secondaryCta.label}
-            </ButtonLink>
+            </SectionLink>
           </Reveal>
         </div>
       </div>

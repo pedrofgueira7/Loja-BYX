@@ -7,8 +7,8 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { navItems } from "@/data/site-content";
 import { storeConfig } from "@/data/store-config";
-import { CATEGORY_EVENT } from "@/components/ui/CatalogLink";
-import type { CategoryId } from "@/data/categories";
+import { SectionLink } from "@/components/ui/SectionLink";
+import { sectionIdFromHref } from "@/lib/scroll";
 
 /**
  * Header sticky sempre preto: a logo original é branca e precisa de fundo escuro.
@@ -35,13 +35,6 @@ export function Header() {
     };
   }, [open]);
 
-  function handleNavClick(category?: CategoryId) {
-    setOpen(false);
-    if (category) {
-      window.dispatchEvent(new CustomEvent(CATEGORY_EVENT, { detail: category }));
-    }
-  }
-
   return (
     <header className="sticky top-0 z-50 border-b border-byx-white/10 bg-byx-black text-byx-white">
       <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:h-20 lg:px-12">
@@ -66,14 +59,14 @@ export function Header() {
           <ul className="flex items-center gap-9">
             {navItems.map((item) => (
               <li key={item.label}>
-                <Link
-                  href={item.href}
-                  onClick={() => handleNavClick("category" in item ? item.category : undefined)}
+                <SectionLink
+                  id={sectionIdFromHref(item.href)}
+                  category={"category" in item ? item.category : undefined}
                   className="group relative py-2 text-[0.72rem] font-semibold tracking-[0.22em] uppercase"
                 >
                   {item.label}
                   <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-byx-white transition-transform duration-300 group-hover:scale-x-100" />
-                </Link>
+                </SectionLink>
               </li>
             ))}
           </ul>
@@ -112,13 +105,14 @@ export function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 + i * 0.05, duration: 0.4 }}
                 >
-                  <Link
-                    href={item.href}
-                    onClick={() => handleNavClick("category" in item ? item.category : undefined)}
+                  <SectionLink
+                    id={sectionIdFromHref(item.href)}
+                    category={"category" in item ? item.category : undefined}
+                    onNavigate={() => setOpen(false)}
                     className="flex min-h-16 items-center font-display text-3xl font-extrabold tracking-[-0.03em] uppercase"
                   >
                     {item.label}
-                  </Link>
+                  </SectionLink>
                 </motion.li>
               ))}
             </ul>

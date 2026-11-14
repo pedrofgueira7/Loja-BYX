@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getProductBySlug, getPublishedProducts, getRelatedProducts, mainImage } from "@/lib/catalog";
 import { getCategory } from "@/data/categories";
 import { storeConfig } from "@/data/store-config";
+import { CatalogLink } from "@/components/ui/CatalogLink";
 import { ProductGallery } from "@/components/products/ProductGallery";
 import { ProductDetails } from "@/components/products/ProductDetails";
 import { ProductCard } from "@/components/products/ProductCard";
@@ -93,9 +94,9 @@ export default async function ProductPage({ params }: PageProps<"/produto/[slug]
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href={`/#${product.category}`} className="hover:underline">
+              <CatalogLink category={product.category} className="hover:underline">
                 {category?.label ?? product.category}
-              </Link>
+              </CatalogLink>
             </li>
             <li aria-hidden>/</li>
             <li aria-current="page" className="font-bold text-byx-black">

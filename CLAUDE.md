@@ -74,6 +74,10 @@ npm run build             # roda validate:catalog antes (build falha se o catál
 - Evitar bordas arredondadas e sombras; layout editorial, preto e branco.
 - Respeitar `prefers-reduced-motion` em qualquer animação nova.
 
+## Navegação interna
+
+Links para seções da home usam `SectionLink` (ou `CatalogLink`, para categorias): rolam suavemente sem adicionar `#` à URL, respeitam `prefers-reduced-motion` e o header sticky (`scroll-margin-top` em `globals.css`). Não use `<Link href="/#...">` ou `<a href="#...">` diretamente. Fragmentos recebidos de fora são tratados e removidos por `ScrollIntent`.
+
 ## Publicação
 
 O catálogo é local: alterar arquivos **não** atualiza o site em produção.
