@@ -64,7 +64,7 @@ export const lifestyle = {
   // position: parte da foto que fica em foco no corte (objectPosition CSS).
   // mobileFull: ocupa a largura toda no mobile.
   images: [
-    { src: "/images/lifestyle/01.jpg", alt: "Duas jaquetas BYX, azul-claro e verde-petróleo, penduradas em cabides", ratio: "4/5", position: "center", col: 0, mobileFull: true },
+    { src: "/images/lifestyle/01.jpg", alt: "Modelo com jaqueta preta de zíper e short rosa BYX ao ar livre", ratio: "4/5", position: "center", col: 0, mobileFull: true },
     { src: "/images/lifestyle/05.jpg", alt: "Detalhe do top e da legging bordô BYX com acabamento branco", ratio: "1/1", position: "center 45%", col: 0, mobileFull: false },
     { src: "/images/lifestyle/02.jpg", alt: "Modelo alongando os braços usando conjunto fitness bordô BYX ao ar livre", ratio: "4/5", position: "center", col: 1, mobileFull: false },
     { src: "/images/lifestyle/04.jpg", alt: "Modelo em movimento usando conjunto fitness bordô BYX", ratio: "4/5", position: "center", col: 1, mobileFull: false },
