@@ -56,17 +56,19 @@ export const about = {
 export const lifestyle = {
   title: "THE BYX LIFESTYLE.",
   /**
-   * Imagens demonstrativas. Substitua os arquivos em /public/images/lifestyle/
-   * mantendo os mesmos nomes (ou atualize os caminhos abaixo).
+   * Fotos da galeria em /public/images/lifestyle/ (01 a 05).
+   * Para trocar, substitua os arquivos mantendo os nomes (ou atualize os caminhos abaixo).
    */
   // col: coluna da composição no desktop (0 larga, 1 média, 2 estreita).
-  // ratio: proporção da foto. mobileFull: ocupa a largura toda no mobile.
+  // ratio: proporção exibida (a foto é cortada para caber).
+  // position: parte da foto que fica em foco no corte (objectPosition CSS).
+  // mobileFull: ocupa a largura toda no mobile.
   images: [
-    { src: "/images/lifestyle/01.jpg", alt: "Look BYX em movimento", ratio: "4/5", col: 0, mobileFull: true },
-    { src: "/images/lifestyle/05.jpg", alt: "Lifestyle BYX", ratio: "1/1", col: 0, mobileFull: false },
-    { src: "/images/lifestyle/02.jpg", alt: "Detalhe de peça BYX", ratio: "4/3", col: 1, mobileFull: false },
-    { src: "/images/lifestyle/04.jpg", alt: "Look fitness BYX", ratio: "4/5", col: 1, mobileFull: false },
-    { src: "/images/lifestyle/03.jpg", alt: "Estilo casual BYX", ratio: "4/5", col: 2, mobileFull: false },
+    { src: "/images/lifestyle/01.jpg", alt: "Duas jaquetas BYX, azul-claro e verde-petróleo, penduradas em cabides", ratio: "4/5", position: "center", col: 0, mobileFull: true },
+    { src: "/images/lifestyle/05.jpg", alt: "Detalhe do top e da legging bordô BYX com acabamento branco", ratio: "1/1", position: "center 45%", col: 0, mobileFull: false },
+    { src: "/images/lifestyle/02.jpg", alt: "Modelo alongando os braços usando conjunto fitness bordô BYX ao ar livre", ratio: "4/5", position: "center", col: 1, mobileFull: false },
+    { src: "/images/lifestyle/04.jpg", alt: "Modelo em movimento usando conjunto fitness bordô BYX", ratio: "4/5", position: "center", col: 1, mobileFull: false },
+    { src: "/images/lifestyle/03.jpg", alt: "Modelo de costas mostrando as alças e o acabamento do top bordô BYX", ratio: "1/1", position: "center 20%", col: 2, mobileFull: false },
   ],
 } as const;
 

@@ -33,6 +33,7 @@ export function Lifestyle() {
                         alt={img.alt}
                         fill
                         sizes="(min-width:1024px) 40vw, (min-width:768px) 40vw, 50vw"
+                        style={{ objectPosition: img.position }}
                         className="object-cover transition-transform duration-[1200ms] hover:scale-105"
                       />
                     </div>
